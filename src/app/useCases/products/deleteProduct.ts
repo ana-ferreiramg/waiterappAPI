@@ -4,7 +4,7 @@ import { Product } from '../../models/Product';
 export async function deleteProduct(req: Request, res: Response) {
   try {
     const { productId } = req.params;
-    await Product.deleteOne({ '_id': productId });
+    await Product.findByIdAndDelete(productId);
 
     res.sendStatus(200);
   } catch {
