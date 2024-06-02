@@ -14,7 +14,7 @@ export async function changeOrderStatus(req: Request, res: Response) {
 
     await Order.findByIdAndUpdate(orderId, { status });
 
-    res.sendStatus(200);
+    res.sendStatus(204);
   } catch {
     res.sendStatus(500);
   }

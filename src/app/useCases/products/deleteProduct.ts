@@ -6,7 +6,7 @@ export async function deleteProduct(req: Request, res: Response) {
     const { productId } = req.params;
     await Product.findByIdAndDelete(productId);
 
-    res.sendStatus(200);
+    res.sendStatus(204);
   } catch {
     res.sendStatus(500);
   }

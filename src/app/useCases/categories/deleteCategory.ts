@@ -6,7 +6,7 @@ export async function deleteCategory(req: Request, res: Response) {
     const { categoryId } = req.params;
     await Category.findByIdAndDelete(categoryId);
 
-    res.sendStatus(200);
+    res.sendStatus(204);
   } catch {
     res.sendStatus(500);
   }
